@@ -15,15 +15,27 @@ const TopNav = () => {
             </div>
             <div className="col-md-9 ulist">
                 <ul className="ulist">
-                    {arr.map((item) => (
-                        <li>
-                            <Link className="link" to="/">
-                                <a href name={item}>
-                                    {item}
-                                </a>
-                            </Link>
-                        </li>
-                    ))}
+                    <li>
+                        <Link className="link" to="/">
+                            <a href name="Allocation">
+                                Allocation
+                            </a>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link className="link" to="/projects">
+                            <a href name="Projects">
+                                Projects
+                            </a>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link className="link" to="/people">
+                            <a href name="People">
+                                People
+                            </a>
+                        </Link>
+                    </li>
                 </ul>
             </div>
             <div className="col-md-1 usercontainer">

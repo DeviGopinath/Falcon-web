@@ -9,6 +9,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Allocation from "./components/views/Allocation";
+import IndividualProject from "./components/views/IndividualProject";
 
 const App = () => {
     return (
@@ -17,6 +18,10 @@ const App = () => {
                 <Route path="/" element={<AllocationContainer />} />
                 <Route path="/projects" element={<ProjectsContainer />} />
                 <Route path="/people" element={<PeopleContainer />} />
+                <Route
+                    path="/projects/individualproject"
+                    element={<IndividualProject />}
+                />
             </Routes>
         </div>
     );

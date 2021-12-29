@@ -6,7 +6,7 @@ const AllocationContainer = () => {
         <div>
             <TopNav />
             <div className="row">
-                <div className="col-md-10 mt-5 pt-5">
+                <div className="col-md-12 mt-5 pt-5">
                     <Allocation />
                 </div>
             </div>

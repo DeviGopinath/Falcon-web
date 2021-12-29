@@ -7,7 +7,7 @@ const PeopleContainer = () => {
     const [empList, setEmpList] = useState([]);
 
     const getEmp = () => {
-        APIService.peopleapi().then((response) => {
+        APIService.peopleApi().then((response) => {
             console.log(response.data);
             setEmpList(response.data);
         });

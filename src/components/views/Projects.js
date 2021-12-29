@@ -2,12 +2,12 @@ import { useEffect } from "react";
 import "../../style/Projects.css";
 import { Link } from "react-router-dom";
 
-const People = ({ getProjDetails, getProj, proj }) => {
+const People = ({ getProjDetails, getProj, projList }) => {
     useEffect(() => {
         getProj();
     }, []);
 
-    console.log(proj);
+    console.log(projList);
 
     return (
         <div className="base">
@@ -27,7 +27,7 @@ const People = ({ getProjDetails, getProj, proj }) => {
                 </div>
             </div>
 
-            {proj.map((item) => (
+            {projList.map((item) => (
                 <div className="main">
                     <div
                         className="row datarow"

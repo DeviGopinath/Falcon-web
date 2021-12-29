@@ -1,0 +1,48 @@
+.basedataheadallocation {
+    justify-content: space-between;
+    /* margin-bottom: 15px; */
+}
+
+.headingallocation {
+    font-size: 24px;
+    margin-left: 110px;
+    font-weight: 600;
+}
+
+.titlerowallocation {
+    font-size: 15px;
+    font-weight: 600;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #efefef;
+}
+
+.monthrow {
+    width: 85%;
+    padding-left: 110px;
+    color: #c0c0c0;
+    font-weight: 600;
+}
+
+.monthbox {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.monthitem {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: 12px;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.submitbtn {
+    border: none;
+    color: #ffffff;
+    background-color: #000000;
+    height: 40px;
+    width: 60%;
+    font-size: 14px;
+}

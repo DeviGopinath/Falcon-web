@@ -9,13 +9,13 @@ const ProjectsContainer = () => {
     const [projDetails, setProjDetails] = useState([]);
 
     const getProj = () => {
-        APIService.projectsapi().then((response) => {
+        APIService.projectsApi().then((response) => {
             setProjList(response.data);
         });
     };
 
     const getProjDetails = (pid) => {
-        APIService.projectdetailsapi(pid).then((response) => {
+        APIService.projectDetailsApi(pid).then((response) => {
             console.log(response.data);
             setProjDetails(response.data);
         });
@@ -30,7 +30,7 @@ const ProjectsContainer = () => {
                         <IndividualProject projDetails={projDetails} />
                     ) : (
                         <Projects
-                            proj={projList}
+                            projList={projList}
                             getProj={getProj}
                             getProjDetails={getProjDetails}
                         />

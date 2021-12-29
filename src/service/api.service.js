@@ -1,9 +1,9 @@
-import peopleapi from "./api/peopleapi";
-import projectsapi from "./api/projectsapi";
-import projectdetailsapi from "./api/projectdetailsapi";
+import peopleApi from "./api/peopleApi";
+import projectsApi from "./api/projectsApi";
+import projectDetailsApi from "./api/projectDetailsApi";
 
 export const APIService = {
-    peopleapi,
-    projectsapi,
-    projectdetailsapi,
+    peopleApi,
+    projectsApi,
+    projectDetailsApi,
 };
