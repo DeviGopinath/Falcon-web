@@ -1,15 +1,9 @@
-import insertData from "./api/insertData";
-import getData from "./api/getData";
-import getAllData from "./api/getAllData";
-import getDateData from "./api/getDateData";
-import authData from "./api/authData";
-import signup from "./api/signup";
+import peopleapi from "./api/peopleapi";
+import projectsapi from "./api/projectsapi";
+import projectdetailsapi from "./api/projectdetailsapi";
 
 export const APIService = {
-    insertData,
-    getData,
-    getAllData,
-    getDateData,
-    authData,
-    signup,
+    peopleapi,
+    projectsapi,
+    projectdetailsapi,
 };

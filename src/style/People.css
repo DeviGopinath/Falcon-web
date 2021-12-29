@@ -1,0 +1,45 @@
+.base {
+    margin-top: 80px;
+}
+.main {
+    width: 50%;
+    margin-left: 120px;
+}
+
+.basedatahead {
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.heading {
+    font-size: 24px;
+    margin-left: 110px;
+    font-weight: 600;
+}
+
+.titlerow {
+    margin-bottom: 20px;
+    font-size: 15px;
+    font-weight: 600;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #e0e0e0;
+}
+
+.datarow {
+    margin-bottom: 7px;
+    color: #686b73;
+    font-size: 14px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #eeeeee;
+}
+
+.submitbtn {
+    border: none;
+    color: #ffffff;
+    background-color: #000000;
+    height: 40px;
+    width: 60%;
+    font-size: 14px;
+}
