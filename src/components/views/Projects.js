@@ -35,7 +35,7 @@ const People = ({ getProjDetails, getProj, projList }) => {
                     >
                         <div className="col-md-2">{item.name}</div>
                         <div className="col-md-2">{item.client}</div>
-                        <div className="col-md-3">{item.estimation}</div>
+                        <div className="col-md-3">{item.estimation} Hours</div>
                         <div className="col-md-2">{item.budget}</div>
                         <div className="col-md-2">{item.members}</div>
                     </div>

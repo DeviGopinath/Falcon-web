@@ -6,7 +6,6 @@ import Tooltip from "@mui/material/Tooltip";
 import icon from "../../../images/falconlogo.png";
 
 const TopNav = () => {
-    const arr = ["Allocation", "Projects", "People"];
     return (
         <div className="row headbox">
             <div className="col-md-2 icon">

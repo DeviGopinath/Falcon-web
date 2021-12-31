@@ -3,7 +3,7 @@
 }
 .main {
     width: 80%;
-    margin-left: 120px;
+    margin-left: 170px;
 }
 
 .basedatahead {
@@ -32,7 +32,7 @@
     font-size: 14px;
     padding-top: 15px;
     padding-bottom: 15px;
-    background-color: #eeeeee;
+    background-color: #f8f8f8;
 }
 
 .submitbtn {
@@ -42,4 +42,68 @@
     height: 40px;
     width: 60%;
     font-size: 14px;
+}
+
+.summaryrowindproj {
+    width: 60%;
+    margin-left: 120px;
+    margin-bottom: 50px;
+    display: flex;
+    color: #000000;
+    justify-content: space-around;
+}
+
+.summaryboxindproj {
+    display: flex;
+    min-width: 140px;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.summaryvalueindproj {
+    font-size: 14px;
+    background-color: #ffe2b4;
+    text-align: left;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 20px;
+    font-weight: 600;
+}
+.summaryitemindproj {
+    font-size: 12px;
+    background-color: #ffe2b4;
+    text-align: left;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    padding-left: 10px;
+}
+
+.summaryvaluebillable {
+    font-size: 14px;
+    background-color: #b3d3a2;
+    text-align: left;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 20px;
+    font-weight: 600;
+}
+.summaryitembillable {
+    font-size: 12px;
+    background-color: #b3d3a2;
+    text-align: left;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    padding-left: 10px;
+}
+
+.navtab {
+    padding-top: 10px;
+    display: flex;
+    list-style: none;
+    margin-bottom: 40px;
+    margin-left: 110px;
+}
+
+a {
+    text-decoration: none;
 }
