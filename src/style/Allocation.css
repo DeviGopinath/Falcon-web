@@ -3,6 +3,11 @@
     /* margin-bottom: 15px; */
 }
 
+.maincont {
+    width: 70%;
+    margin-left: 140px;
+}
+
 .headingallocation {
     font-size: 24px;
     margin-left: 110px;
@@ -41,6 +46,7 @@
 }
 
 .titlerowallocation {
+    text-align: center;
     font-size: 15px;
     font-weight: 600;
     padding-top: 15px;
@@ -79,6 +85,7 @@
     background-color: #f8f8f8;
     width: 80%;
 }
+
 .submitbtn {
     border: none;
     color: #ffffff;
@@ -90,4 +97,68 @@
 
 .namecolumn {
     background-color: #f8f8f8;
+    padding: 25px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.datacolumn {
+    text-align: center;
+    font-size: 12px;
+}
+
+.projdatarow {
+    color: #919191;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.projtotalrow {
+    color: #919191;
+    text-align: center;
+    margin-bottom: 20px;
+    justify-content: space-around;
+}
+
+.line {
+    color: #868686;
+}
+.nameitem {
+    color: #707070;
+    font-weight: 600;
+}
+.sek,
+.finutil,
+.opsutil {
+    padding: 10px;
+    margin: 10px;
+}
+
+.sek {
+    background-color: #fddf8c;
+}
+
+.finutil {
+    background-color: #b3d3a2;
+}
+
+.opsutil {
+    background-color: #edf0f2;
+}
+
+.projdataitem {
+    background-color: #f8f8f8;
+    padding: 5px;
+    margin: 5px;
+}
+
+.projtotalitem {
+    background-color: #edf0f2;
+    font-weight: 600;
+    padding: 5px;
+    margin: 5px;
+}
+
+.emptycolumn {
+    margin: 5px;
 }

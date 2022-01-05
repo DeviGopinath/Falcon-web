@@ -19,8 +19,8 @@ const People = ({ apicall, emp }) => {
             <div className="main">
                 <div className="row titlerow">
                     <div className="col-md-3">Emp#</div>
-                    <div className="col-md-5">Email</div>
-                    <div className="col-md-2">Name</div>
+                    <div className="col-md-5">Name</div>
+                    <div className="col-md-2">Email</div>
                 </div>
             </div>
 
@@ -28,8 +28,8 @@ const People = ({ apicall, emp }) => {
                 <div className="main">
                     <div className="row datarow">
                         <div className="col-md-3">{item.eid}</div>
-                        <div className="col-md-5">{item.email}</div>
-                        <div className="col-md-2">{item.name}</div>
+                        <div className="col-md-5">{item.name}</div>
+                        <div className="col-md-2">{item.email}</div>
                     </div>
                 </div>
             ))}

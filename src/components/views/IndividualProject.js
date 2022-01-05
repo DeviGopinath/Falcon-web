@@ -7,15 +7,14 @@ const IndividualProject = ({ projDetails }) => {
 
     const [members, selectMembers] = useState(false);
 
-    const setSelectMembers = (data) => {
-        if (data == true) {
-            selectMembers(data);
-        }
+    const setSelectMembers = () => {
+        selectMembers(true);
+        console.log(members);
     };
     return (
         <div className="base">
             <div className="row basedatahead">
-                <div className="col-md-2 heading">
+                <div className="col-md-4 heading">
                     Projects &gt; {projDetails[0].projname}
                 </div>
                 <div className="col-md-2">
@@ -24,30 +23,30 @@ const IndividualProject = ({ projDetails }) => {
             </div>
             <div className="summaryrowindproj">
                 <div className="summaryboxindproj">
-                    <div className="summaryvalueindproj">1360</div>
+                    <div className="summaryvalueindproj">VALUE</div>
                     <div className="summaryitemindproj">Planned scope</div>
                 </div>
                 <div className="summaryboxindproj">
-                    <div className="summaryvalueindproj">1360</div>
+                    <div className="summaryvalueindproj">VALUE</div>
                     <div className="summaryitemindproj">Allocation</div>
                 </div>
                 <div className="summaryboxindproj">
-                    <div className="summaryvalueindproj">1360</div>
+                    <div className="summaryvalueindproj">VALUE</div>
                     <div className="summaryitemindproj">Spent</div>
                 </div>
                 <div className="summaryboxindproj">
-                    <div className="summaryvaluebillable">81%</div>
+                    <div className="summaryvaluebillable">VALUE</div>
                     <div className="summaryitembillable">
                         Billable utilisation
                     </div>
                 </div>
                 <div className="summaryboxindproj">
-                    <div className="summaryvalueindproj">1.23 MSEK</div>
+                    <div className="summaryvalueindproj">VALUE</div>
                     <div className="summaryitemindproj">Revenue</div>
                 </div>
             </div>
             <ul className="navtab">
-                <li onClick={() => setSelectMembers(true)}>
+                <li onClick={() => setSelectMembers()}>
                     <a>Members</a>
                 </li>
                 <li>
@@ -57,7 +56,7 @@ const IndividualProject = ({ projDetails }) => {
                     <a>Revenue</a>
                 </li>
             </ul>
-            <MembersTabData members={members} projDetails={projDetails} />
+            {/* {members == true(<MembersTabData projDetails={projDetails} />)} */}
         </div>
     );
 };

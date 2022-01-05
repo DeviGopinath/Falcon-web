@@ -1,4 +1,5 @@
 const getAllData = (month) => {
+    console.log(month);
     const requestOptions = {
         method: "GET",
     };
