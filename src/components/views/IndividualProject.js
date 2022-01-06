@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../../style/Projects.css";
 import MembersTabData from "./MembersTabData";
+import { Link } from "react-router-dom";
 
 const IndividualProject = ({ projDetails }) => {
     console.log(projDetails);
@@ -17,9 +18,11 @@ const IndividualProject = ({ projDetails }) => {
                 <div className="col-md-4 heading">
                     Projects &gt; {projDetails[0].projname}
                 </div>
-                <div className="col-md-2">
-                    <button className="submitbtn">New Member</button>
-                </div>
+                {/* <div className="col-md-2">
+                    <Link to="/projects/addallocation">
+                        <button className="submitbtn">Add Allocation</button>
+                    </Link>
+                </div> */}
             </div>
             <div className="summaryrowindproj">
                 <div className="summaryboxindproj">

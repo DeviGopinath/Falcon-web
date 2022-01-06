@@ -39,6 +39,9 @@
     margin: 10px;
     height: 35px;
     margin-bottom: 20px;
+    border-color: #aaaaaa;
+    border-style: ridge;
+    border-width: 1px;
 }
 
 .field {

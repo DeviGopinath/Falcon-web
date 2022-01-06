@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import IndividualProject from "./components/views/IndividualProject";
 import PeopleAddMember from "./components/views/PeopleAddMember";
 import AddProject from "./components/views/AddProject";
+import AddAllocation from "./components/views/AddAllocation";
 
 const App = () => {
     return (
@@ -21,6 +22,7 @@ const App = () => {
                 />
                 <Route path="/people/addMember" element={<PeopleAddMember />} />
                 <Route path="/projects/addProject" element={<AddProject />} />
+                <Route path="/addAllocation" element={<AddAllocation />} />
             </Routes>
         </div>
     );

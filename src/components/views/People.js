@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import "../../style/People.css";
-import PeopleAddMember from "./PeopleAddMember";
 import { Link } from "react-router-dom";
 
 const People = ({ apicall, emp }) => {
@@ -11,7 +10,7 @@ const People = ({ apicall, emp }) => {
     console.log(emp);
 
     return (
-        <div className="base">
+        <div className="basepeople">
             <div className="row basedatahead">
                 <div className="col-md-2 heading">People</div>
                 <div className="col-md-2">

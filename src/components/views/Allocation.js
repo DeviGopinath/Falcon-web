@@ -2,6 +2,7 @@ import { APIService } from "../../service/api.service";
 import { useState } from "react";
 import "../../style/Allocation.css";
 import AllocationDisplay from "./AllocationDisplay";
+import { Link } from "react-router-dom";
 
 const Allocation = () => {
     const arr = [
@@ -32,6 +33,11 @@ const Allocation = () => {
         <div>
             <div className="row basedataheadallocation">
                 <div className="col-md-2 headingallocation">Allocation</div>
+                <div className="col-md-2">
+                    <Link to="/addAllocation">
+                        <button className="submitbtn">Add Allocation</button>
+                    </Link>
+                </div>
             </div>
             <div className="row monthrow">
                 {arr.map((item) => (

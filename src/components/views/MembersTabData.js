@@ -4,8 +4,9 @@ import "../../style/Projects.css";
 const MembersTabData = ({ projDetails }) => {
     console.log(projDetails);
     return (
-        <div className="base">
+        <div className="baseindproj">
             <div className="main">
+                <div className="row btnrow"></div>
                 <div className="row titlerow">
                     <div className="col-md-2">Emp#</div>
                     <div className="col-md-2">Member</div>
