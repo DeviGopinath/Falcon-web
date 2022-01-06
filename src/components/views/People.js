@@ -1,5 +1,7 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import "../../style/People.css";
+import PeopleAddMember from "./PeopleAddMember";
+import { Link } from "react-router-dom";
 
 const People = ({ apicall, emp }) => {
     useEffect(() => {
@@ -13,7 +15,9 @@ const People = ({ apicall, emp }) => {
             <div className="row basedatahead">
                 <div className="col-md-2 heading">People</div>
                 <div className="col-md-2">
-                    <button className="submitbtn">New Member</button>
+                    <Link to="/people/addMember">
+                        <button className="submitbtn">New Member</button>
+                    </Link>
                 </div>
             </div>
             <div className="main">

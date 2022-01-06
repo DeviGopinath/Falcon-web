@@ -3,13 +3,10 @@ import classes from "./App.module.css";
 import AllocationContainer from "./components/containers/AllocationContainer";
 import PeopleContainer from "./components/containers/PeopleContainer";
 import ProjectsContainer from "./components/containers/ProjectsContainer";
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
-import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Allocation from "./components/views/Allocation";
 import IndividualProject from "./components/views/IndividualProject";
+import PeopleAddMember from "./components/views/PeopleAddMember";
+import AddProject from "./components/views/AddProject";
 
 const App = () => {
     return (
@@ -22,6 +19,8 @@ const App = () => {
                     path="/projects/individualproject"
                     element={<IndividualProject />}
                 />
+                <Route path="/people/addMember" element={<PeopleAddMember />} />
+                <Route path="/projects/addProject" element={<AddProject />} />
             </Routes>
         </div>
     );

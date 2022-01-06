@@ -9,8 +9,8 @@ const IndividualProject = ({ projDetails }) => {
 
     const setSelectMembers = () => {
         selectMembers(true);
-        console.log(members);
     };
+    console.log(members);
     return (
         <div className="base">
             <div className="row basedatahead">
@@ -56,7 +56,12 @@ const IndividualProject = ({ projDetails }) => {
                     <a>Revenue</a>
                 </li>
             </ul>
-            {/* {members == true(<MembersTabData projDetails={projDetails} />)} */}
+            {members == true ? (
+                <MembersTabData projDetails={projDetails} />
+            ) : (
+                <div> </div>
+            )}
+            {/* {members == "true"(<MembersTabData projDetails={projDetails} />)} */}
         </div>
     );
 };

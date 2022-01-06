@@ -4,6 +4,7 @@ import "../../style/Allocation.css";
 
 const Allocation = (allocationList) => {
     const data = allocationList.allocationList;
+    console.log(data);
     const alloc = [];
     const rev = [];
     console.log(data);

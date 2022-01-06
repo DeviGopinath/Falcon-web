@@ -14,7 +14,9 @@ const People = ({ getProjDetails, getProj, projList }) => {
             <div className="row basedatahead">
                 <div className="col-md-2 heading">Projects</div>
                 <div className="col-md-2">
-                    <button className="submitbtn">New Project</button>
+                    <Link to="/projects/addProject">
+                        <button className="submitbtn">New Project</button>
+                    </Link>
                 </div>
             </div>
             <div className="main">

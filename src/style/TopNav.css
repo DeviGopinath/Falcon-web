@@ -29,11 +29,16 @@ li {
     margin-right: 70px;
 }
 
-.ulist .link {
+li a:hover {
+    color: #e2c79f;
+}
+
+.link {
     text-decoration: none;
     color: #ffffff;
 }
 
-.link:hover {
-    color: #ffffff;
+.linknew {
+    text-decoration: none;
+    color: #e2c79f;
 }
