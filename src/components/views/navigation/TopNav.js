@@ -7,22 +7,22 @@ import icon from "../../../images/falconlogo.png";
 import { useState } from "react";
 
 const TopNav = () => {
-    // const [stylealloc, setStyleAlloc] = useState("link");
-    // const [styleprojects, setStyleProjects] = useState("link");
-    // const [stylepeople, setStylePeople] = useState("link");
+    const [tabs, setTabs] = useState([
+        { tabname: "Allocation", path: "/", selected: false },
+        { tabname: "Projects", path: "/projects", selected: false },
+        { tabname: "People", path: "/people", selected: false },
+    ]);
 
-    // const changeStyleAlloc = () => {
-    //     console.log("you just clicked alloc");
-    //     setStyleAlloc("linknew");
-    // };
-    // const changeStyleProjects = () => {
-    //     console.log("you just clicked projects");
-    //     setStyleProjects("linknew");
-    // };
-    // const changeStylePeople = () => {
-    //     console.log("you just clicked people");
-    //     setStylePeople("linknew");
-    // };
+    const select = (i) => {
+        var arr = tabs;
+        console.log(i);
+        arr.map((item, index) => {
+            i === index ? (item.selected = true) : (item.selected = false);
+        });
+        setTabs(arr);
+        console.log(tabs[i]);
+        console.log(tabs);
+    };
 
     return (
         <div className="row headbox">
@@ -32,39 +32,28 @@ const TopNav = () => {
             </div>
             <div className="col-md-9 ulist">
                 <ul className="ulist">
-                    <li>
-                        <Link
-                            className="link"
-                            to="/"
-                            // onClick={changeStyleAlloc()}
-                        >
-                            <a href name="Allocation">
-                                Allocation
-                            </a>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            className="link"
-                            to="/projects"
-                            // onClick={changeStyleProjects()}
-                        >
-                            <a href name="Projects">
-                                Projects
-                            </a>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            className="link"
-                            to="/people"
-                            // onClick={changeStylePeople()}
-                        >
-                            <a href name="People">
-                                People
-                            </a>
-                        </Link>
-                    </li>
+                    {tabs.map((item, i) => (
+                        <li key={i}>
+                            <Link
+                                className="link"
+                                to={item.path}
+                                onClick={() => select(i)}
+                            >
+                                <a href name={item.tabname}>
+                                    {item.selected && (
+                                        <span className="selected">
+                                            {item.tabname}
+                                        </span>
+                                    )}
+                                    {!item.selected && (
+                                        <span className="default">
+                                            {item.tabname}
+                                        </span>
+                                    )}
+                                </a>
+                            </Link>
+                        </li>
+                    ))}
                 </ul>
             </div>
             <div className="col-md-1 usercontainer">

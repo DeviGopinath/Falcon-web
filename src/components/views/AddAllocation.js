@@ -6,10 +6,13 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Select from "react-select";
 import { useState, useEffect } from "react";
+import AlertDialog from "./AlertDialog";
 
 export default function AddAllocation(data) {
     const [people, setPeople] = useState([]);
     const [proj, setProj] = useState([]);
+    const [open, setOpen] = useState(false);
+    const [message, setMessage] = useState("");
 
     const getPeople = () => {
         APIService.peopleApi().then((response) => {
@@ -59,7 +62,8 @@ export default function AddAllocation(data) {
         console.log(data);
         APIService.addAllocationApi(data).then((response) => {
             if (response.data.length > 0) {
-                alert("Inserted");
+                setOpen(true);
+                setMessage("Allocated successfully!");
             }
         });
     };
@@ -81,12 +85,15 @@ export default function AddAllocation(data) {
     return (
         <div className="formwrapper">
             <div className="row headrow">
-                <div className="col-md-6 head"> Add Allocation</div>
-                <div className="col-md-1">
+                <div className="col-md-6 head">
+                    {" "}
+                    Allocation &gt; Add allocation
+                </div>
+                {/* <div className="col-md-1">
                     <Link to="/">
                         <button className="backbtn">Back</button>
                     </Link>
-                </div>
+                </div> */}
             </div>
             <div>
                 <form className="form" onSubmit={handleOnSubmit}>
@@ -131,6 +138,9 @@ export default function AddAllocation(data) {
                     </button>
                 </form>
             </div>
+            {open === true && (
+                <AlertDialog open={open} message={message} setOpen={setOpen} />
+            )}
         </div>
     );
 }

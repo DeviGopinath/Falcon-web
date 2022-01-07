@@ -4,13 +4,18 @@ import "../../style/AddMember.css";
 import { Link } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useState } from "react";
+import AlertDialog from "./AlertDialog";
 
-export default function PeopleAddMember() {
+export default function AddProject() {
+    const [open, setOpen] = useState(false);
+    const [message, setMessage] = useState("");
     const insertProject = (data) => {
         console.log(data);
         APIService.addProjectApi(data).then((response) => {
             if (response.data.length > 0) {
-                toast.success("Inserted");
+                setOpen(true);
+                setMessage("Project added!");
             }
         });
     };
@@ -32,11 +37,11 @@ export default function PeopleAddMember() {
         <div className="formwrapper">
             <div className="row headrow">
                 <div className="col-md-6 head">Projects &gt; Add Project</div>
-                <div className="col-md-1">
+                {/* <div className="col-md-1">
                     <Link to="/projects">
                         <button className="backbtn">Back</button>
                     </Link>
-                </div>
+                </div> */}
             </div>
             <div>
                 <form className="form" onSubmit={handleOnSubmit}>
@@ -44,12 +49,14 @@ export default function PeopleAddMember() {
                     <input
                         id="pid"
                         type="number"
+                        autoComplete="off"
                         name="pid"
                         className="field"
                     />
                     <label className="label">Name:</label>
                     <input
                         id="pname"
+                        autoComplete="off"
                         type="text"
                         className="field"
                         name="pname"
@@ -58,6 +65,7 @@ export default function PeopleAddMember() {
                     <input
                         id="client"
                         type="text"
+                        autoComplete="off"
                         className="field"
                         name="client"
                     />
@@ -65,6 +73,7 @@ export default function PeopleAddMember() {
                     <input
                         id="estimation"
                         type="number"
+                        autoComplete="off"
                         className="field"
                         name="estimation"
                     />
@@ -72,6 +81,7 @@ export default function PeopleAddMember() {
                     <input
                         id="budget"
                         type="number"
+                        autoComplete="off"
                         className="field"
                         name="budget"
                     />
@@ -82,11 +92,16 @@ export default function PeopleAddMember() {
                         className="field"
                         name="members"
                     />
+                    {/* <Link to="/projects"> */}
                     <button type="submit" className="subbtn">
                         Submit
                     </button>
+                    {/* </Link> */}
                 </form>
             </div>
+            {open === true && (
+                <AlertDialog open={open} message={message} setOpen={setOpen} />
+            )}
         </div>
     );
 }

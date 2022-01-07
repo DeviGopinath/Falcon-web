@@ -8,6 +8,9 @@ import IndividualProject from "./components/views/IndividualProject";
 import PeopleAddMember from "./components/views/PeopleAddMember";
 import AddProject from "./components/views/AddProject";
 import AddAllocation from "./components/views/AddAllocation";
+import AddMemberContainer from "./components/containers/AddMemberContainer";
+import AddProjectContainer from "./components/containers/AddProjectContainer";
+import AddAllocationContainer from "./components/containers/AddAllocationContainer";
 
 const App = () => {
     return (
@@ -20,9 +23,18 @@ const App = () => {
                     path="/projects/individualproject"
                     element={<IndividualProject />}
                 />
-                <Route path="/people/addMember" element={<PeopleAddMember />} />
-                <Route path="/projects/addProject" element={<AddProject />} />
-                <Route path="/addAllocation" element={<AddAllocation />} />
+                <Route
+                    path="/people/addMember"
+                    element={<AddMemberContainer />}
+                />
+                <Route
+                    path="/projects/addProject"
+                    element={<AddProjectContainer />}
+                />
+                <Route
+                    path="/addAllocation"
+                    element={<AddAllocationContainer />}
+                />
             </Routes>
         </div>
     );

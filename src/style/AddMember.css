@@ -4,13 +4,14 @@
 }
 
 .headrow {
-    justify-content: space-around;
+    justify-content: left;
     margin-bottom: 40px;
 }
 
 .head {
     font-size: 24px;
     font-weight: 600;
+    margin-left: 100px;
 }
 
 .backbtn {

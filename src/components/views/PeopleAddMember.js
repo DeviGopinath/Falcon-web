@@ -4,13 +4,19 @@ import "../../style/AddMember.css";
 import { Link } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useState } from "react";
+import AlertDialog from "./AlertDialog";
 
 export default function PeopleAddMember() {
+    const [open, setOpen] = useState(false);
+    const [message, setMessage] = useState("");
+
     const insertPeople = (data) => {
         console.log(data.eid, data.ename, data.email);
         APIService.peopleAddMemberApi(data).then((response) => {
             if (response.data.length > 0) {
-                toast.success("Inserted");
+                setOpen(true);
+                setMessage("Member added!");
             }
         });
     };
@@ -29,11 +35,11 @@ export default function PeopleAddMember() {
         <div className="formwrapper">
             <div className="row headrow">
                 <div className="col-md-6 head">People &gt; Add Member</div>
-                <div className="col-md-1">
+                {/* <div className="col-md-1">
                     <Link to="/people">
                         <button className="backbtn">Back</button>
                     </Link>
-                </div>
+                </div> */}
             </div>
             <div>
                 <form className="form" onSubmit={handleOnSubmit}>
@@ -47,6 +53,7 @@ export default function PeopleAddMember() {
                     <label className="label">Name:</label>
                     <input
                         id="ename"
+                        autoComplete="off"
                         type="text"
                         className="textfield"
                         name="ename"
@@ -55,14 +62,20 @@ export default function PeopleAddMember() {
                     <input
                         id="email"
                         type="text"
+                        autoComplete="off"
                         className="textfield"
                         name="email"
                     />
+                    {/* <Link to="/people"> */}
                     <button type="submit" className="subbtn">
                         Submit
                     </button>
+                    {/* </Link> */}
                 </form>
             </div>
+            {open === true && (
+                <AlertDialog open={open} message={message} setOpen={setOpen} />
+            )}
         </div>
     );
 }
