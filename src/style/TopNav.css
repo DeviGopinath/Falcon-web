@@ -11,11 +11,8 @@
 }
 
 .selected {
+    text-decoration: none;
     color: #e0a64d;
-}
-
-.default {
-    color: #ffffff;
 }
 
 .icon {

@@ -1,5 +1,5 @@
 import "../../../style/TopNav.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
@@ -7,21 +7,11 @@ import icon from "../../../images/falconlogo.png";
 import { useState } from "react";
 
 const TopNav = () => {
-    const [tabs, setTabs] = useState([
-        { tabname: "Allocation", path: "/", selected: false },
-        { tabname: "Projects", path: "/projects", selected: false },
-        { tabname: "People", path: "/people", selected: false },
-    ]);
-
-    const select = (i) => {
-        var arr = tabs;
-        console.log(i);
-        arr.map((item, index) => {
-            i === index ? (item.selected = true) : (item.selected = false);
-        });
-        setTabs(arr);
-        console.log(tabs[i]);
-    };
+    const tabs = [
+        { tabname: "Allocation", path: "/" },
+        { tabname: "Projects", path: "/projects" },
+        { tabname: "People", path: "/people" },
+    ];
 
     return (
         <div className="row headbox">
@@ -33,24 +23,15 @@ const TopNav = () => {
                 <ul className="ulist">
                     {tabs.map((item, i) => (
                         <li key={i}>
-                            <Link
-                                className="link"
+                            <NavLink
+                                className={({ isActive }) =>
+                                    isActive ? "selected" : "link"
+                                }
+                                end
                                 to={item.path}
-                                onClick={() => select(i)}
                             >
-                                <a href name={item.tabname}>
-                                    {item.selected && (
-                                        <span className="selected">
-                                            {item.tabname}
-                                        </span>
-                                    )}
-                                    {!item.selected && (
-                                        <span className="default">
-                                            {item.tabname}
-                                        </span>
-                                    )}
-                                </a>
-                            </Link>
+                                {item.tabname}
+                            </NavLink>
                         </li>
                     ))}
                 </ul>

@@ -22,9 +22,34 @@ const Allocation = () => {
     const heading = ["Name", "Project", "Allocation", "Revenue"];
 
     const [allocationList, setAllocationList] = useState([]);
+    const [isActive, setActive] = useState([
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+    ]);
 
-    const handleMonthClick = (item) => {
+    const handleMonthClick = (item, ind) => {
         console.log(item);
+        const temp = isActive;
+        console.log(ind);
+        temp.map((i, j) => {
+            if (j === ind) {
+                temp[j] = true;
+                console.log(j);
+            } else {
+                temp[j] = false;
+            }
+        });
+        setActive(temp);
         APIService.allocationApi(item).then((response) => {
             setAllocationList(response.data);
         });
@@ -39,11 +64,14 @@ const Allocation = () => {
                     </Link>
                 </div>
             </div>
-            <div className="row monthrow">
-                {arr.map((item) => (
+            <div className="monthrow">
+                {arr.map((item, ind) => (
                     <div
-                        className="col-md-1 monthbox"
-                        onClick={() => handleMonthClick(item)}
+                        // className="monthbox"
+                        className={
+                            isActive[ind] ? "activemonthbox" : "monthbox"
+                        }
+                        onClick={() => handleMonthClick(item, ind)}
                     >
                         <div className="monthitem">{item}</div>
                     </div>

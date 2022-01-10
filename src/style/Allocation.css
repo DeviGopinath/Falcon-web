@@ -55,23 +55,27 @@
 }
 
 .monthrow {
-    width: 80%;
+    width: 100%;
     padding-left: 110px;
-    color: #c0c0c0;
+    display: flex;
+    color: #807d7d;
     font-weight: 600;
 }
 
 .monthbox {
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-.monthitem {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 20px;
-    padding-left: 20px;
-    font-size: 12px;
+    padding: 10px 20px;
+    margin: 10px;
     background-color: #f8f8f8;
+}
+
+.activemonthbox {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #ddd9d9;
+}
+
+.monthitem {
+    font-size: 12px;
     text-align: center;
 }
 
