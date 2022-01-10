@@ -1,8 +1,6 @@
 import React from "react";
 import { APIService } from "../../service/api.service";
 import "../../style/AddAlloc.css";
-import { Link } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Select from "react-select";
 import { useState, useEffect } from "react";
@@ -36,6 +34,7 @@ export default function AddAllocation(data) {
     people.map((item) => {
         var eid = item.eid;
         eidArr.push({ value: eid, label: eid });
+        return eidArr;
     });
 
     proj.map((item) => {

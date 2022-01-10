@@ -1,13 +1,10 @@
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import classes from "./App.module.css";
 import AllocationContainer from "./components/containers/AllocationContainer";
 import PeopleContainer from "./components/containers/PeopleContainer";
 import ProjectsContainer from "./components/containers/ProjectsContainer";
 import "react-toastify/dist/ReactToastify.css";
 import IndividualProject from "./components/views/IndividualProject";
-import PeopleAddMember from "./components/views/PeopleAddMember";
-import AddProject from "./components/views/AddProject";
-import AddAllocation from "./components/views/AddAllocation";
 import AddMemberContainer from "./components/containers/AddMemberContainer";
 import AddProjectContainer from "./components/containers/AddProjectContainer";
 import AddAllocationContainer from "./components/containers/AddAllocationContainer";

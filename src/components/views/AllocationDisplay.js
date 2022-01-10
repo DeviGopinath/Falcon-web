@@ -1,5 +1,3 @@
-import { APIService } from "../../service/api.service";
-import { useState } from "react";
 import "../../style/Allocation.css";
 
 const Allocation = (allocationList) => {

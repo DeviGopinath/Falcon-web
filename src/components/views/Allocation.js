@@ -83,10 +83,9 @@ const Allocation = () => {
             </div>
             <div className="maincont">
                 <div className="row titlerowallocation">
-                    <div className="col-md-3">Name</div>
-                    <div className="col-md-3">Project</div>
-                    <div className="col-md-3">Allocation</div>
-                    <div className="col-md-3">Revenue</div>
+                    {heading.map((item) => (
+                        <div className="col-md-3">{item}</div>
+                    ))}
                 </div>
                 <AllocationDisplay allocationList={allocationList} />
             </div>

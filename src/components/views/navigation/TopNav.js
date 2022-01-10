@@ -21,7 +21,6 @@ const TopNav = () => {
         });
         setTabs(arr);
         console.log(tabs[i]);
-        console.log(tabs);
     };
 
     return (

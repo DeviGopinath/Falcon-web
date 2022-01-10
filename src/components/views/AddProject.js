@@ -1,8 +1,6 @@
 import React from "react";
 import { APIService } from "../../service/api.service";
 import "../../style/AddMember.css";
-import { Link } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
 import AlertDialog from "./AlertDialog";
@@ -28,7 +26,7 @@ export default function AddProject() {
             client: e.target.client.value,
             estimation: e.target.estimation.value,
             budget: e.target.budget.value,
-            members: e.target.members.value,
+            // members: e.target.members.value,
         };
         insertProject(data);
     };
@@ -85,13 +83,13 @@ export default function AddProject() {
                         className="field"
                         name="budget"
                     />
-                    <label className="label">Members:</label>
+                    {/* <label className="label">Members:</label>
                     <input
                         id="members"
                         type="number"
                         className="field"
                         name="members"
-                    />
+                    /> */}
                     {/* <Link to="/projects"> */}
                     <button type="submit" className="subbtn">
                         Submit

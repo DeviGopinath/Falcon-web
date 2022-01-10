@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import "../../style/People.css";
 import { Link } from "react-router-dom";
 

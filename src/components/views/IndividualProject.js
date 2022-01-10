@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "../../style/Projects.css";
 import MembersTabData from "./MembersTabData";
-import { Link } from "react-router-dom";
 
 const IndividualProject = ({ projDetails }) => {
     console.log(projDetails);
@@ -49,17 +48,11 @@ const IndividualProject = ({ projDetails }) => {
                 </div>
             </div>
             <ul className="navtab">
-                <li onClick={() => setSelectMembers()}>
-                    <a>Members</a>
-                </li>
-                <li>
-                    <a>Allocation</a>
-                </li>
-                <li>
-                    <a>Revenue</a>
-                </li>
+                <li onClick={() => setSelectMembers()}>Members</li>
+                <li>Allocation</li>
+                <li>Revenue</li>
             </ul>
-            {members == true ? (
+            {members === true ? (
                 <MembersTabData projDetails={projDetails} />
             ) : (
                 <div> </div>

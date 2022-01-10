@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import "../../style/Projects.css";
 
 const MembersTabData = ({ projDetails }) => {
