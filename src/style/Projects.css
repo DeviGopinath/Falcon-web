@@ -23,6 +23,17 @@
     font-weight: 600;
 }
 
+.idle {
+    font-weight: 500;
+    color: #686b73;
+}
+
+.active {
+    font-weight: 500;
+    color: #000000;
+    text-decoration: underline;
+}
+
 .titlerow {
     margin-bottom: 20px;
     font-size: 15px;

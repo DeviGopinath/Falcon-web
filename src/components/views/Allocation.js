@@ -1,10 +1,14 @@
 import { APIService } from "../../service/api.service";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../../style/Allocation.css";
 import AllocationDisplay from "./AllocationDisplay";
 import { Link } from "react-router-dom";
 
 const Allocation = () => {
+    useEffect(() => {
+        defaultMonth();
+    }, []);
+
     const arr = [
         "Jan",
         "Feb",
@@ -37,6 +41,17 @@ const Allocation = () => {
         false,
     ]);
 
+    const [defMonth, setDefMonth] = useState();
+    console.log(defMonth);
+
+    const defaultMonth = () => {
+        const d = new Date();
+        let m = d.getMonth();
+        setDefMonth(arr[m]);
+        handleMonthClick(defMonth, m);
+        console.log(arr[m]);
+    };
+
     const handleMonthClick = (item, ind) => {
         console.log(item);
         const temp = isActive;
@@ -49,7 +64,7 @@ const Allocation = () => {
                 temp[j] = false;
             }
         });
-        setActive(temp);
+        setActive([...temp]);
         APIService.allocationApi(item).then((response) => {
             setAllocationList(response.data);
         });
@@ -67,7 +82,7 @@ const Allocation = () => {
             <div className="monthrow">
                 {arr.map((item, ind) => (
                     <div
-                        // className="monthbox"
+                        className="monthbox"
                         className={
                             isActive[ind] ? "activemonthbox" : "monthbox"
                         }

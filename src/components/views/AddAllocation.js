@@ -63,6 +63,14 @@ export default function AddAllocation(data) {
             if (response.data.length > 0) {
                 setOpen(true);
                 setMessage("Allocated successfully!");
+                console.log(response.data[0].pid, "response.data.pid");
+                const d = { pid: response.data[0].pid };
+                APIService.memberCountApi(d).then((response) => {
+                    if (response.data.length > 0) {
+                        console.log(response.data, "update response");
+                        console.log("Count updated");
+                    }
+                });
             }
         });
     };

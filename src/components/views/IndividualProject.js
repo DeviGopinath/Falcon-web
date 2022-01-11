@@ -1,27 +1,38 @@
 import { useState } from "react";
 import "../../style/Projects.css";
 import MembersTabData from "./MembersTabData";
+import AllocationTabData from "./AllocationTabData";
+import RevenueTabData from "./RevenueTabData";
 
 const IndividualProject = ({ projDetails }) => {
-    console.log(projDetails);
+    // console.log(projDetails);
 
-    const [members, selectMembers] = useState(false);
+    const [isActive, setActive] = useState([false, false, false]);
+    const navArr = ["Members", "Allocation", "Revenue"];
 
-    const setSelectMembers = () => {
-        selectMembers(true);
+    console.log(isActive);
+
+    const setSelectMembers = (ind) => {
+        console.log(isActive[ind], ind);
+        const temp = isActive;
+        temp.map((i, j) => {
+            if (j === ind) {
+                temp[j] = true;
+            } else {
+                temp[j] = false;
+            }
+        });
+        setActive([...temp]);
+        console.log(isActive[ind], ind);
+        console.log(isActive);
     };
-    console.log(members);
+
     return (
         <div className="base">
             <div className="row basedatahead">
                 <div className="col-md-4 heading">
                     Projects &gt; {projDetails[0].projname}
                 </div>
-                {/* <div className="col-md-2">
-                    <Link to="/projects/addallocation">
-                        <button className="submitbtn">Add Allocation</button>
-                    </Link>
-                </div> */}
             </div>
             <div className="summaryrowindproj">
                 <div className="summaryboxindproj">
@@ -48,16 +59,24 @@ const IndividualProject = ({ projDetails }) => {
                 </div>
             </div>
             <ul className="navtab">
-                <li onClick={() => setSelectMembers()}>Members</li>
-                <li>Allocation</li>
-                <li>Revenue</li>
+                {navArr.map((item, ind) => (
+                    <li
+                        className={isActive[ind] ? "active" : "idle"}
+                        onClick={() => setSelectMembers(ind)}
+                    >
+                        {item}
+                    </li>
+                ))}
             </ul>
-            {members === true ? (
+            {isActive[0] === true ? (
                 <MembersTabData projDetails={projDetails} />
             ) : (
-                <div> </div>
+                <div />
             )}
-            {/* {members == "true"(<MembersTabData projDetails={projDetails} />)} */}
+
+            {isActive[1] === true ? <AllocationTabData /> : <div> </div>}
+
+            {isActive[2] === true ? <RevenueTabData /> : <div> </div>}
         </div>
     );
 };

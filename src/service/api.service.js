@@ -5,6 +5,7 @@ import allocationApi from "./api/allocationApi";
 import peopleAddMemberApi from "./api/peopleAddMemberApi";
 import addProjectApi from "./api/addProjectApi";
 import addAllocationApi from "./api/addAllocationApi";
+import memberCountApi from "./api/memberCountApi";
 
 export const APIService = {
     peopleApi,
@@ -14,4 +15,5 @@ export const APIService = {
     peopleAddMemberApi,
     addProjectApi,
     addAllocationApi,
+    memberCountApi,
 };
