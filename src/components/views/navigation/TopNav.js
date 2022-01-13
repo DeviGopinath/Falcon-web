@@ -27,7 +27,6 @@ const TopNav = () => {
                                 className={({ isActive }) =>
                                     isActive ? "selected" : "link"
                                 }
-                                end
                                 to={item.path}
                             >
                                 {item.tabname}

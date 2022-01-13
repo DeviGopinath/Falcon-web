@@ -42,14 +42,13 @@ const Allocation = () => {
     ]);
 
     const [defMonth, setDefMonth] = useState();
-    console.log(defMonth);
 
     const defaultMonth = () => {
         const d = new Date();
-        let m = d.getMonth();
+        let a = d.getMonth();
+        let m = parseInt(a);
         setDefMonth(arr[m]);
-        handleMonthClick(defMonth, m);
-        console.log(arr[m]);
+        handleMonthClick(arr[m], m);
     };
 
     const handleMonthClick = (item, ind) => {
@@ -69,6 +68,11 @@ const Allocation = () => {
             setAllocationList(response.data);
         });
     };
+
+    // useEffect(() => {
+    //     console.log(activemonth);
+    // }, [activemonth]);
+
     return (
         <div>
             <div className="row basedataheadallocation">

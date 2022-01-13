@@ -11,21 +11,16 @@ export default function AddAllocation(data) {
     const [proj, setProj] = useState([]);
     const [open, setOpen] = useState(false);
     const [message, setMessage] = useState("");
+    const [month, setMonth] = useState();
 
     const getPeople = () => {
         APIService.peopleApi().then((response) => {
             setPeople(response.data);
         });
     };
-    const getProjects = () => {
-        APIService.projectsApi().then((response) => {
-            setProj(response.data);
-        });
-    };
 
     useEffect(() => {
         getPeople();
-        getProjects();
     }, []);
 
     const eidArr = [];
@@ -41,6 +36,13 @@ export default function AddAllocation(data) {
         var pid = item.pid;
         pidArr.push({ value: pid, label: pid });
     });
+
+    const getProjects = (e) => {
+        let d = { month: month, eid: e.value };
+        APIService.allocatedProjectsApi(d).then((response) => {
+            setProj(response.data);
+        });
+    };
 
     const months = [
         { value: "Jan", label: "January" },
@@ -104,8 +106,21 @@ export default function AddAllocation(data) {
             </div>
             <div>
                 <form className="form" onSubmit={handleOnSubmit}>
+                    <label className="label">Month:</label>
+                    <Select
+                        options={months}
+                        onChange={(e) => setMonth(e.value)}
+                        className="dropdown"
+                        name="month"
+                    />
+
                     <label className="label">Employee id:</label>
-                    <Select options={eidArr} className="dropdown" name="eid" />
+                    <Select
+                        options={eidArr}
+                        onChange={(e) => getProjects(e)}
+                        className="dropdown"
+                        name="eid"
+                    />
 
                     <label className="label">Project id:</label>
                     <Select options={pidArr} className="dropdown" name="pid" />
@@ -124,13 +139,6 @@ export default function AddAllocation(data) {
                         type="number"
                         className="textfield"
                         name="allocation"
-                    />
-
-                    <label className="label">Month:</label>
-                    <Select
-                        options={months}
-                        className="dropdown"
-                        name="month"
                     />
 
                     <label className="label">Revenue:</label>
