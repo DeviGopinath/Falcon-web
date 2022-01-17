@@ -42,6 +42,8 @@ const Allocation = () => {
     ]);
 
     const [defMonth, setDefMonth] = useState();
+    const [activeProjects, setActiveProjects] = useState({});
+    const [totalMembers, setTotalMembers] = useState();
 
     const defaultMonth = () => {
         const d = new Date();
@@ -65,9 +67,20 @@ const Allocation = () => {
         });
         setActive([...temp]);
         APIService.allocationApi(item).then((response) => {
-            setAllocationList(response.data);
+            console.log(response.data);
+            setAllocationList([...response.data]);
+        });
+        APIService.activeProjectsApi(item).then((response) => {
+            console.log(response.data[0]);
+            setActiveProjects(response.data[0]);
+        });
+        APIService.totalMembersApi(item).then((response) => {
+            console.log(response.data[0]);
+            setTotalMembers(response.data[0]);
         });
     };
+
+    console.log(allocationList);
 
     // useEffect(() => {
     //     console.log(activemonth);
@@ -96,46 +109,11 @@ const Allocation = () => {
                     </div>
                 ))}
             </div>
-            <div className="summaryrowallocation">
-                <div className="summaryboxallocation">
-                    <div className="summaryvalue">VALUE</div>
-                    <div className="summaryitem">Working days</div>
-                </div>
-                <div className="summaryboxallocation">
-                    <div className="summaryvalue">VALUE</div>
-                    <div className="summaryitem">Allocated hours</div>
-                </div>
-                <div className="summaryboxallocation">
-                    <div className="summaryvalue">VALUE</div>
-                    <div className="summaryitem">Billable hours</div>
-                </div>
-                <div className="summaryboxallocation">
-                    <div className="summaryvaluebillable">VALUE</div>
-                    <div className="summaryitembillable">
-                        Billable utilisation
-                    </div>
-                </div>
-                <div className="summaryboxallocation">
-                    <div className="summaryvalue">VALUE</div>
-                    <div className="summaryitem">Revenue</div>
-                </div>
-                <div className="summaryboxallocation">
-                    <div className="summaryvalue">VALUE</div>
-                    <div className="summaryitem">Active Projects</div>
-                </div>
-                <div className="summaryboxallocation">
-                    <div className="summaryvalue">VALUE</div>
-                    <div className="summaryitem ">Members</div>
-                </div>
-            </div>
-            <div className="maincont">
-                <div className="row titlerowallocation">
-                    {heading.map((item) => (
-                        <div className="col-md-3">{item}</div>
-                    ))}
-                </div>
-                <AllocationDisplay allocationList={allocationList} />
-            </div>
+            <AllocationDisplay
+                allocationList={allocationList}
+                activeProjects={activeProjects}
+                totalMembers={totalMembers}
+            />
         </div>
     );
 };

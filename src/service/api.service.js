@@ -7,6 +7,8 @@ import addAllocationApi from "./api/addAllocationApi";
 import memberCountApi from "./api/memberCountApi";
 import projectsApi from "./api/projectsApi";
 import allocatedProjectsApi from "./api/allocatedProjectsApi";
+import activeProjectsApi from "./api/activeProjectsApi";
+import totalMembersApi from "./api/totalMembersApi";
 
 export const APIService = {
     peopleApi,
@@ -18,4 +20,6 @@ export const APIService = {
     memberCountApi,
     projectsApi,
     allocatedProjectsApi,
+    activeProjectsApi,
+    totalMembersApi,
 };
