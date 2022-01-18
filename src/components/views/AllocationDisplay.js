@@ -3,12 +3,14 @@ import "../../style/Allocation.css";
 const Allocation = (props) => {
     console.log(props);
     const data = props.allocationList;
-    const activeProjects = props.activeProjects.count;
-    const totalMembers = props.totalMembers.count;
+    const activeProjects = parseInt(props.activeProjects.count);
+    const totalMembers = parseInt(props.totalMembers);
     const heading = ["Name", "Project", "Allocation", "Revenue"];
     const alloc = [];
     const rev = [];
     console.log(data);
+    console.log(totalMembers);
+    console.log(activeProjects);
     data.map((item) => {
         var r = [];
         var all = [];

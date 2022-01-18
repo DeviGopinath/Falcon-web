@@ -76,7 +76,7 @@ const Allocation = () => {
         });
         APIService.totalMembersApi(item).then((response) => {
             console.log(response.data[0]);
-            setTotalMembers(response.data[0]);
+            setTotalMembers(response.data[0].count);
         });
     };
 
