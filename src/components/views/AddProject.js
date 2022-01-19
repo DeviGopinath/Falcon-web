@@ -4,6 +4,7 @@ import "../../style/AddMember.css";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
 import AlertDialog from "./AlertDialog";
+import { Link } from "react-router-dom";
 
 export default function AddProject() {
     const [open, setOpen] = useState(false);
@@ -26,7 +27,6 @@ export default function AddProject() {
             client: e.target.client.value,
             estimation: e.target.estimation.value,
             budget: e.target.budget.value,
-            // members: e.target.members.value,
         };
         insertProject(data);
     };
@@ -34,12 +34,14 @@ export default function AddProject() {
     return (
         <div className="formwrapper">
             <div className="row headrow">
-                <div className="col-md-6 head">Projects &gt; Add Project</div>
-                {/* <div className="col-md-1">
-                    <Link to="/projects">
-                        <button className="backbtn">Back</button>
-                    </Link>
-                </div> */}
+                <div className="col-md-6 head">
+                    <span>
+                        <Link className="span" to="/projects">
+                            Projects
+                        </Link>
+                    </span>{" "}
+                    &gt; Add Project
+                </div>
             </div>
             <div>
                 <form className="form" onSubmit={handleOnSubmit}>

@@ -8,6 +8,7 @@ import IndividualProject from "./components/views/IndividualProject";
 import AddMemberContainer from "./components/containers/AddMemberContainer";
 import AddProjectContainer from "./components/containers/AddProjectContainer";
 import AddAllocationContainer from "./components/containers/AddAllocationContainer";
+import IndividualProjectContainer from "./components/containers/IndividualProjectContainer";
 
 const App = () => {
     return (
@@ -17,8 +18,8 @@ const App = () => {
                 <Route path="/projects" element={<ProjectsContainer />} />
                 <Route path="/people" element={<PeopleContainer />} />
                 <Route
-                    path="/projects/individualproject"
-                    element={<IndividualProject />}
+                    path="/projects/:projectname/:pid"
+                    element={<IndividualProjectContainer />}
                 />
                 <Route
                     path="/people/addMember"
@@ -29,7 +30,7 @@ const App = () => {
                     element={<AddProjectContainer />}
                 />
                 <Route
-                    path="/addAllocation"
+                    path="/projects/:projectname/:pid/addmember"
                     element={<AddAllocationContainer />}
                 />
             </Routes>

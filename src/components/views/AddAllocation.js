@@ -5,10 +5,16 @@ import "react-toastify/dist/ReactToastify.css";
 import Select from "react-select";
 import { useState, useEffect } from "react";
 import AlertDialog from "./AlertDialog";
+import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function AddAllocation(data) {
+    const params = useParams();
+    const name = params.projectname;
+    const pid = params.pid;
+    console.log(name, pid);
+
     const [people, setPeople] = useState([]);
-    const [proj, setProj] = useState([]);
     const [open, setOpen] = useState(false);
     const [message, setMessage] = useState("");
     const [month, setMonth] = useState();
@@ -24,25 +30,13 @@ export default function AddAllocation(data) {
     }, []);
 
     const eidArr = [];
-    const pidArr = [];
+    // const pidArr = [];
 
     people.map((item) => {
         var eid = item.eid;
         eidArr.push({ value: eid, label: eid });
         return eidArr;
     });
-
-    proj.map((item) => {
-        var pid = item.pid;
-        pidArr.push({ value: pid, label: pid });
-    });
-
-    const getProjects = (e) => {
-        let d = { month: month, eid: e.value };
-        APIService.allocatedProjectsApi(d).then((response) => {
-            setProj(response.data);
-        });
-    };
 
     const months = [
         { value: "Jan", label: "January" },
@@ -79,15 +73,15 @@ export default function AddAllocation(data) {
 
     const handleOnSubmit = (e) => {
         e.preventDefault();
-        console.log(e);
         var data = {
+            month: e.target.month.value,
             eid: e.target.eid.value,
-            pid: e.target.pid.value,
+            pid: pid,
             rate: e.target.rate.value,
             allocation: e.target.allocation.value,
-            month: e.target.month.value,
-            revenue: e.target.revenue.value,
+            revenue: e.target.allocation.value * e.target.rate.value,
         };
+        console.log(data);
         insertAllocation(data);
     };
 
@@ -96,13 +90,13 @@ export default function AddAllocation(data) {
             <div className="row headrow">
                 <div className="col-md-6 head">
                     {" "}
-                    Allocation &gt; Add allocation
+                    <span>
+                        <Link className="span" to={`/projects/${name}/${pid}`}>
+                            {name}
+                        </Link>
+                    </span>{" "}
+                    &gt; Add Member
                 </div>
-                {/* <div className="col-md-1">
-                    <Link to="/">
-                        <button className="backbtn">Back</button>
-                    </Link>
-                </div> */}
             </div>
             <div>
                 <form className="form" onSubmit={handleOnSubmit}>
@@ -117,13 +111,13 @@ export default function AddAllocation(data) {
                     <label className="label">Employee id:</label>
                     <Select
                         options={eidArr}
-                        onChange={(e) => getProjects(e)}
+                        // onChange={(e) => getProjects(e)}
                         className="dropdown"
                         name="eid"
                     />
 
-                    <label className="label">Project id:</label>
-                    <Select options={pidArr} className="dropdown" name="pid" />
+                    {/* <label className="label">Project id:</label>
+                    <Select options={pidArr} className="dropdown" name="pid" /> */}
 
                     <label className="label">Rate:</label>
                     <input
@@ -141,13 +135,13 @@ export default function AddAllocation(data) {
                         name="allocation"
                     />
 
-                    <label className="label">Revenue:</label>
+                    {/* <label className="label">Revenue:</label>
                     <input
                         id="revenue"
                         type="number"
                         className="textfield"
                         name="revenue"
-                    />
+                    /> */}
                     <button type="submit" className="subbtn">
                         Submit
                     </button>

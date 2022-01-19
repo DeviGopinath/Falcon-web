@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import "../../style/Projects.css";
 import { Link } from "react-router-dom";
 
-const People = ({ getProjDetails, getProj, projList }) => {
+const People = ({ getProj, projList }) => {
     useEffect(() => {
         getProj();
     }, []);
@@ -31,16 +31,20 @@ const People = ({ getProjDetails, getProj, projList }) => {
 
             {projList.map((item) => (
                 <div className="main">
-                    <div
-                        className="row datarow"
-                        onClick={() => getProjDetails(item.pid)}
+                    <Link
+                        to={`/projects/${item.name}/${item.pid}`}
+                        state={{ pid: item.pid }}
                     >
-                        <div className="col-md-2">{item.name}</div>
-                        <div className="col-md-2">{item.client}</div>
-                        <div className="col-md-3">{item.estimation} Hours</div>
-                        <div className="col-md-2">{item.budget}</div>
-                        <div className="col-md-2">{item.members}</div>
-                    </div>
+                        <div className="row datarow">
+                            <div className="col-md-2">{item.name}</div>
+                            <div className="col-md-2">{item.client}</div>
+                            <div className="col-md-3">
+                                {item.estimation} Hours
+                            </div>
+                            <div className="col-md-2">{item.budget}</div>
+                            <div className="col-md-2">{item.members}</div>
+                        </div>
+                    </Link>
                 </div>
             ))}
         </div>

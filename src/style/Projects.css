@@ -14,7 +14,7 @@
 .basedatahead {
     margin-top: 100px;
     justify-content: space-between;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .heading {
@@ -31,7 +31,7 @@
 .active {
     font-weight: 500;
     color: #000000;
-    text-decoration: underline;
+    border-bottom: 3px solid;
 }
 
 .titlerow {
@@ -41,6 +41,15 @@
     padding-top: 15px;
     padding-bottom: 15px;
     background-color: #efefef;
+    text-align: center;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.span {
+    color: #000000 !important;
 }
 
 .datarow {
@@ -50,6 +59,7 @@
     padding-top: 15px;
     padding-bottom: 15px;
     background-color: #f8f8f8;
+    text-align: center;
 }
 
 .btnrow {
@@ -69,8 +79,8 @@
 .summaryrowindproj {
     width: 60%;
     margin-left: 120px;
-    margin-bottom: 50px;
-    margin-top: 50px;
+    margin-bottom: 10px;
+    margin-top: 10px;
     display: flex;
     color: #000000;
     justify-content: space-around;

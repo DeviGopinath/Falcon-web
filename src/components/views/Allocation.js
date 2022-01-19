@@ -90,16 +90,12 @@ const Allocation = () => {
         <div>
             <div className="row basedataheadallocation">
                 <div className="col-md-2 headingallocation">Allocation</div>
-                <div className="col-md-2">
-                    <Link to="/addAllocation">
-                        <button className="submitbtn">Add Allocation</button>
-                    </Link>
-                </div>
             </div>
             <div className="monthrow">
                 {arr.map((item, ind) => (
                     <div
                         className="monthbox"
+                        type="button"
                         className={
                             isActive[ind] ? "activemonthbox" : "monthbox"
                         }

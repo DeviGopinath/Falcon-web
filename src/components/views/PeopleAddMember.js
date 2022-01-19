@@ -4,6 +4,7 @@ import "../../style/AddMember.css";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
 import AlertDialog from "./AlertDialog";
+import { Link } from "react-router-dom";
 
 export default function PeopleAddMember() {
     const [open, setOpen] = useState(false);
@@ -32,12 +33,14 @@ export default function PeopleAddMember() {
     return (
         <div className="formwrapper">
             <div className="row headrow">
-                <div className="col-md-6 head">People &gt; Add Member</div>
-                {/* <div className="col-md-1">
-                    <Link to="/people">
-                        <button className="backbtn">Back</button>
-                    </Link>
-                </div> */}
+                <div className="col-md-6 head">
+                    <span>
+                        <Link className="span" to="/people">
+                            People
+                        </Link>
+                    </span>{" "}
+                    &gt; Add Member
+                </div>
             </div>
             <div>
                 <form className="form" onSubmit={handleOnSubmit}>

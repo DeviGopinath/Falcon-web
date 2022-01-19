@@ -1,13 +1,16 @@
 import { useState } from "react";
 import "../../style/Projects.css";
+import { Link } from "react-router-dom";
 import MembersTabData from "./MembersTabData";
 import AllocationTabData from "./AllocationTabData";
 import RevenueTabData from "./RevenueTabData";
 
-const IndividualProject = ({ projDetails }) => {
-    // console.log(projDetails);
+const IndividualProject = (props) => {
+    const projDetails = props.projDetails;
+    const pid = props.pid;
+    console.log(projDetails, pid);
 
-    const [isActive, setActive] = useState([false, false, false]);
+    const [isActive, setActive] = useState([true, false, false]);
     const navArr = ["Members", "Allocation", "Revenue"];
 
     console.log(isActive);
@@ -31,7 +34,19 @@ const IndividualProject = ({ projDetails }) => {
         <div className="base">
             <div className="row basedatahead">
                 <div className="col-md-4 heading">
-                    Projects &gt; {projDetails[0].projname}
+                    <span>
+                        <Link className="span" to="/projects">
+                            Projects
+                        </Link>
+                    </span>{" "}
+                    &gt; {projDetails[0].projname}
+                </div>
+                <div className="col-md-2">
+                    <Link
+                        to={`/projects/${projDetails[0].projname}/${pid}/addmember`}
+                    >
+                        <button className="submitbtn">Add Member</button>
+                    </Link>
                 </div>
             </div>
             <div className="summaryrowindproj">
@@ -63,6 +78,7 @@ const IndividualProject = ({ projDetails }) => {
                     <li
                         className={isActive[ind] ? "active" : "idle"}
                         onClick={() => setSelectMembers(ind)}
+                        type="button"
                     >
                         {item}
                     </li>
