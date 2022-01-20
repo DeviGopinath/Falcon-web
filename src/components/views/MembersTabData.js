@@ -7,7 +7,7 @@ const MembersTabData = ({ projDetails }) => {
             <div className="main">
                 <div className="row btnrow"></div>
                 <div className="row titlerow">
-                    <div className="col-md-2">Emp#</div>
+                    <div className="col-md-2">Employee Id</div>
                     <div className="col-md-2">Member</div>
                     <div className="col-md-3">Rate</div>
                 </div>

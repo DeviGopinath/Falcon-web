@@ -8,7 +8,12 @@
 
 .main {
     width: 80%;
-    margin-left: 170px;
+    margin-left: 120px;
+}
+
+.alloctabmain {
+    width: 85%;
+    margin-left: 100px;
 }
 
 .basedatahead {
@@ -19,7 +24,7 @@
 
 .heading {
     font-size: 24px;
-    margin-left: 110px;
+    margin-left: 50px;
     font-weight: 600;
 }
 
@@ -42,6 +47,32 @@
     padding-bottom: 15px;
     background-color: #efefef;
     text-align: center;
+}
+
+.alloctitlerow {
+    display: flex;
+    margin-bottom: 20px;
+    font-size: 15px;
+    font-weight: 600;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #efefef;
+    text-align: center;
+}
+
+.allocdatarow {
+    display: flex;
+    margin-bottom: 7px;
+    color: #686b73;
+    font-size: 14px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.name {
+    font-weight: 700;
 }
 
 a {
@@ -78,7 +109,7 @@ a {
 
 .summaryrowindproj {
     width: 60%;
-    margin-left: 120px;
+    margin-left: 60px;
     margin-bottom: 10px;
     margin-top: 10px;
     display: flex;
@@ -134,7 +165,7 @@ a {
     display: flex;
     list-style: none;
     margin-bottom: 30px;
-    margin-left: 110px;
+    margin-left: 50px;
 }
 
 a {

@@ -4,7 +4,6 @@ import AllocationContainer from "./components/containers/AllocationContainer";
 import PeopleContainer from "./components/containers/PeopleContainer";
 import ProjectsContainer from "./components/containers/ProjectsContainer";
 import "react-toastify/dist/ReactToastify.css";
-import IndividualProject from "./components/views/IndividualProject";
 import AddMemberContainer from "./components/containers/AddMemberContainer";
 import AddProjectContainer from "./components/containers/AddProjectContainer";
 import AddAllocationContainer from "./components/containers/AddAllocationContainer";

@@ -30,13 +30,21 @@ export default function AddAllocation(data) {
     }, []);
 
     const eidArr = [];
-    // const pidArr = [];
 
     people.map((item) => {
         var eid = item.eid;
         eidArr.push({ value: eid, label: eid });
         return eidArr;
     });
+
+    const handleSelectMonth = (e) => {
+        setMonth(e.value);
+        var d = { month: e.value, pid: pid };
+        console.log(d);
+        APIService.unallocatedPeopleApi(d).then((response) => {
+            setPeople(response.data);
+        });
+    };
 
     const months = [
         { value: "Jan", label: "January" },
@@ -103,21 +111,14 @@ export default function AddAllocation(data) {
                     <label className="label">Month:</label>
                     <Select
                         options={months}
-                        onChange={(e) => setMonth(e.value)}
+                        onChange={(e) => handleSelectMonth(e)}
+                        //onChange={(e) => setMonth(e.value)}
                         className="dropdown"
                         name="month"
                     />
 
                     <label className="label">Employee id:</label>
-                    <Select
-                        options={eidArr}
-                        // onChange={(e) => getProjects(e)}
-                        className="dropdown"
-                        name="eid"
-                    />
-
-                    {/* <label className="label">Project id:</label>
-                    <Select options={pidArr} className="dropdown" name="pid" /> */}
+                    <Select options={eidArr} className="dropdown" name="eid" />
 
                     <label className="label">Rate:</label>
                     <input
@@ -135,13 +136,6 @@ export default function AddAllocation(data) {
                         name="allocation"
                     />
 
-                    {/* <label className="label">Revenue:</label>
-                    <input
-                        id="revenue"
-                        type="number"
-                        className="textfield"
-                        name="revenue"
-                    /> */}
                     <button type="submit" className="subbtn">
                         Submit
                     </button>

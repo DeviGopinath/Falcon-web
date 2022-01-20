@@ -7,6 +7,8 @@ import RevenueTabData from "./RevenueTabData";
 
 const IndividualProject = (props) => {
     const projDetails = props.projDetails;
+    const projectname = props.projectname;
+    const revalloc = props.revalloc;
     const pid = props.pid;
     console.log(projDetails, pid);
 
@@ -33,18 +35,16 @@ const IndividualProject = (props) => {
     return (
         <div className="base">
             <div className="row basedatahead">
-                <div className="col-md-4 heading">
+                <div className="col-md-3 heading">
                     <span>
                         <Link className="span" to="/projects">
                             Projects
                         </Link>
                     </span>{" "}
-                    &gt; {projDetails[0].projname}
+                    &gt; {projectname}
                 </div>
                 <div className="col-md-2">
-                    <Link
-                        to={`/projects/${projDetails[0].projname}/${pid}/addmember`}
-                    >
+                    <Link to={`/projects/${projectname}/${pid}/addmember`}>
                         <button className="submitbtn">Add Member</button>
                     </Link>
                 </div>
@@ -90,9 +90,17 @@ const IndividualProject = (props) => {
                 <div />
             )}
 
-            {isActive[1] === true ? <AllocationTabData /> : <div> </div>}
+            {isActive[1] === true ? (
+                <AllocationTabData revalloc={revalloc} />
+            ) : (
+                <div> </div>
+            )}
 
-            {isActive[2] === true ? <RevenueTabData /> : <div> </div>}
+            {isActive[2] === true ? (
+                <RevenueTabData revalloc={revalloc} />
+            ) : (
+                <div> </div>
+            )}
         </div>
     );
 };
